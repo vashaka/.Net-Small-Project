@@ -1,0 +1,29 @@
+@model Product
+
+<h1>Create New Product</h1>
+
+<form method="post" class="flex flex-col">
+    <div class="flex flex-col">
+        <label asp-for="Title" class=""></label>
+        <input asp-for="Title" type="text" class="border-1 py-3 text-xl px-3" placeholder="Joe">
+        <span class="text-red-500" asp-validation-for="Title"></span>
+    </div>
+        <div class="flex flex-col">
+        <label asp-for="Description" class=""></label>
+        <input asp-for="Description" type="text" class="border-1 py-3 text-xl px-3" placeholder="this is a very good product">
+        <span class="text-red-500" asp-validation-for="Description"></span>
+    </div>
+        <div class="flex flex-col">
+        <label asp-for="Price" class=""></label>
+        <input asp-for="Price" type="number" class="border-1 py-3 text-xl px-3" placeholder="1500">
+        <span class="text-red-500" asp-validation-for="Price"></span>
+    </div>
+
+    <button type="submit">Create</button>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
